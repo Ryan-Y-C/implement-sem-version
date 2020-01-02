@@ -24,7 +24,7 @@ public class Version {
         int minLen = Math.min(version1Array.length, version2Array.length);
         long diff = 0;
 
-` `        while (index < minLen) {
+       while (index < minLen) {
             if ((diff = Integer.parseInt(version1Array[index]) - Integer.parseInt(version2Array[index])) == 0) {
                 index++;
             } else {
