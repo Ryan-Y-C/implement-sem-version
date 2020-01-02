@@ -24,10 +24,12 @@ public class Version {
         int minLen = Math.min(version1Array.length, version2Array.length);
         long diff = 0;
 
-        while (index < minLen
-                && (diff = Integer.parseInt(version1Array[index])
-                - Integer.parseInt(version2Array[index])) == 0) {
-            index++;
+` `        while (index < minLen) {
+            if ((diff = Integer.parseInt(version1Array[index]) - Integer.parseInt(version2Array[index])) == 0) {
+                index++;
+            } else {
+                return (diff > 0) ? 1 : -1;
+            }
         }
         if (diff == 0) {
             for (int i = index; i < version1Array.length; i++) {
@@ -43,7 +45,7 @@ public class Version {
             }
             return 0;
         } else {
-            return diff > 0 ? 1 : -1;
+            return (diff > 0) ? 1 : -1;
         }
     }
 }
